@@ -12,17 +12,24 @@
     tools:context=".TTTActivity">
 
     <LinearLayout
-        android:layout_width="330dp"
+        android:layout_width="fill_parent"
         android:layout_height="110dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:gravity="center" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:background="@color/white"
             android:orientation="vertical"
-            android:layout_gravity="top|left"></LinearLayout>
+            android:layout_gravity="left"></LinearLayout>
+
+            </LinearLayout>
 
         <LinearLayout
             android:layout_width="100dp"
@@ -31,16 +38,21 @@
             android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:gravity="center" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:background="@color/white"
             android:orientation="vertical"
             android:layout_gravity="right"></LinearLayout>
-
+</LinearLayout>
         </LinearLayout>
 
     <LinearLayout
-        android:layout_width="330dp"
+        android:layout_width="fill_parent"
         android:layout_height="110dp"
         android:orientation="horizontal"
         android:gravity="center">
@@ -66,7 +78,7 @@
         </LinearLayout>
 
     <LinearLayout
-        android:layout_width="330dp"
+        android:layout_width="fill_parent"
         android:layout_height="110dp"
         android:orientation="horizontal"
         android:gravity="center">
@@ -94,6 +106,7 @@
         </LinearLayout>
     <TextView
         android:text="@string/game_in_progress"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
