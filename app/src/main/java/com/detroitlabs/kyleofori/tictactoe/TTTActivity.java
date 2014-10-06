@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TableRow;
 
 
 public class TTTActivity extends Activity {
@@ -15,13 +14,13 @@ public class TTTActivity extends Activity {
     private char[][] gameBoard = new char[3][3];
 
 
-    private void setUpOnClickListeners() {
+    private void setupOnClickListeners() {
         LinearLayout L = (LinearLayout) findViewById(R.id.linearLayout);
         for(int y = 0; y < L.getChildCount(); y++) {
             if(L.getChildAt(y) instanceof LinearLayout) {
                 LinearLayout innerL = (LinearLayout) L.getChildAt(y);
                 for(int x = 0; x < innerL.getChildCount(); x+=2) {
-                    View V = L.getChildAt(x); // In our case this will be each button on the grid
+                    View V = innerL.getChildAt(x); // In our case this will be each button on the grid
                     V.setOnClickListener(new PlayOnClick(x, y));
                 }
             }
@@ -54,6 +53,7 @@ public class TTTActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttt);
+        setupOnClickListeners(); //Just put this in here, see if it works
     }
 
 
