@@ -7,6 +7,9 @@ import android.view.MenuItem;
 
 
 public class TTTActivity extends Activity {
+    private boolean xTurn = false;
+    private char[][] gameBoard = new char[3][3];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
