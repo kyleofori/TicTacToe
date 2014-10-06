@@ -11,9 +11,10 @@
 
 
     <TextView
-        android:text="@+id/titleText"
-        />
+        android:text="@+id/titleText"/>
+
     <Button
+        android:id="@+id/new_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

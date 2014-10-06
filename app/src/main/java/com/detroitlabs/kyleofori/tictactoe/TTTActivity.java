@@ -10,10 +10,12 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+//heavily based on http://lyndonarmitage.com/making-tic-tac-toe-in-android/
 
 public class TTTActivity extends Activity {
     private boolean xTurn = false;
     private char[][] gameBoard = new char[3][3];
+    private Button mNewGameButton;
 
 
     private void setupOnClickListeners() {
@@ -42,12 +44,17 @@ public class TTTActivity extends Activity {
 
         @Override
         public void onClick(View view) {
-            if(view instanceof Button) {
+            if (view instanceof Button) {
                 Button B = (Button) view;
-                gameBoard[x][y] =  xTurn ? 'O' : 'X';
-                B.setText(xTurn ? "O" : "X");
+                gameBoard[x][y] = xTurn ? 'X' : 'O';
+                B.setText(xTurn ? "X" : "O");
                 B.setEnabled(false);
                 xTurn = !xTurn;
+
+                // check if anyone has won
+                if (checkWin()) {
+                    disableButtons();
+                }
             }
         }
     }
@@ -172,28 +179,21 @@ public class TTTActivity extends Activity {
         }
     }
 
-
-    public void onClick(View view) {
-        if (view instanceof Button) {
-            Button B = (Button) view;
-            gameBoard[x][y] = xTurn ? 'O' : 'X';
-            B.setText(xTurn ? "O" : "X");
-            B.setEnabled(false);
-            xTurn = !xTurn;
-
-            // check if anyone has won
-            if (checkWin()) {
-                disableButtons();
-            }
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttt);
         setupOnClickListeners(); //Just put this in here, see if it works
+
         resetButtons();
+
+        mNewGameButton = (Button)findViewById(R.id.new_game);
+        mNewGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+        public void onClick(View view) {
+                //Does something soon...
+            }
+        });
     }
 
 
