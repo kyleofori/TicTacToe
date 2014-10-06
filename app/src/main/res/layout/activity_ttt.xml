@@ -10,6 +10,9 @@
     tools:context=".TTTActivity">
 
 
+    <TextView
+        android:text="@+id/titleText"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

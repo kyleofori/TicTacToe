@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 
 public class TTTActivity extends Activity {
@@ -81,11 +82,118 @@ public class TTTActivity extends Activity {
         }
     }
 
+    /**
+     * This is a generic algorithm for checking if a specific player has won on a tic tac toe board of any size.
+     *
+     * @param board  the board itself
+     * @param size   the width and height of the board
+     * @param player the player, 'X' or 'O'
+     * @return true if the specified player has won
+     */
+    private boolean checkWinner(char[][] board, int size, char player) {
+        // check each column
+        for (int x = 0; x < size; x++) {
+            int total = 0;
+            for (int y = 0; y < size; y++) {
+                if (board[x][y] == player) {
+                    total++;
+                }
+            }
+            if (total >= size) {
+                return true; // they win
+            }
+        }
+
+        // check each row
+        for (int y = 0; y < size; y++) {
+            int total = 0;
+            for (int x = 0; x < size; x++) {
+                if (board[x][y] == player) {
+                    total++;
+                }
+            }
+            if (total >= size) {
+                return true; // they win
+            }
+        }
+
+        // forward diag
+        int total = 0;
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
+                if (x == y && board[x][y] == player) {
+                    total++;
+                }
+            }
+        }
+        if (total >= size) {
+            return true; // they win
+        }
+
+        // backward diag
+        total = 0;
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
+                if (x + y == size - 1 && board[x][y] == player) {
+                    total++;
+                }
+            }
+        }
+        if (total >= size) {
+            return true; // they win
+        }
+
+        return false; // nobody won
+    }
+
+
+    /**
+     * Method that returns true when someone has won and false when nobody has.
+     * It also display the winner on screen.
+     *
+     * @return
+     */
+    private boolean checkWin() {
+
+        char winner = '\0';
+        if (checkWinner(gameBoard, 3, 'X')) {
+            winner = 'X';
+        } else if (checkWinner(gameBoard, 3, 'O')) {
+            winner = 'O';
+        }
+
+        if (winner == '\0') {
+            return false; // nobody won
+        } else {
+            // display winner
+            TextView T = (TextView) findViewById(R.id.titleText);
+            T.setText(winner + " wins");
+            return true;
+        }
+    }
+
+
+    public void onClick(View view) {
+        if (view instanceof Button) {
+            Button B = (Button) view;
+            gameBoard[x][y] = xTurn ? 'O' : 'X';
+            B.setText(xTurn ? "O" : "X");
+            B.setEnabled(false);
+            xTurn = !xTurn;
+
+            // check if anyone has won
+            if (checkWin()) {
+                disableButtons();
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttt);
         setupOnClickListeners(); //Just put this in here, see if it works
+        resetButtons();
     }
 
 
