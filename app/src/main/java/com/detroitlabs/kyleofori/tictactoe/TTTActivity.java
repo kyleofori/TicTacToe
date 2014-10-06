@@ -4,11 +4,27 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TableRow;
 
 
 public class TTTActivity extends Activity {
     private boolean xTurn = false;
     private char[][] gameBoard = new char[3][3];
+
+    private void setUpOnClickListeners() {
+        LinearLayout L = (LinearLayout) findViewById(R.id.linearLayout);
+        for(int y = 0; y < L.getChildCount(); y++) {
+            if(L.getChildAt(y) instanceof TableRow) {
+                TableRow R = (TableRow) L.getChildAt(y);
+                for(int x = 0; x < R.getChildCount(); x ++) {
+                    View V = R.getChildAt(x); // In our case this will be each button on the grid
+                    V.setOnClickListener(new PlayOnClick(x, y));
+                }
+            }
+        }
+    }
 
 
     @Override
