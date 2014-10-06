@@ -25,13 +25,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:orientation="vertical"
-            android:border="20dp"></TextView>
+            android:orientation="vertical"></TextView>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:border="20dp"
             android:background="@color/white"></TextView>
 
         <TextView
@@ -39,7 +37,6 @@
             android:layout_height="match_parent"
             android:padding="3dip"
             android:gravity="right"
-            android:border="20dp"
             android:background="@color/white"></TextView>
 
     </TableRow>
@@ -51,19 +48,16 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:border="20dp"
             android:background="@color/white"></TextView>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:border="20dp"
             android:background="@color/white"></TextView>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:border="20dp"
             android:background="@color/white"></TextView>
 
     </TableRow>
@@ -75,20 +69,16 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:border="20dp"
             android:background="@color/white"></TextView>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:border="20dp"
             android:background="@color/white"></TextView>
 
         <TextView
             android:layout_width="0dp"
             android:text="Big X"
-            android:border="20dp"
-            android:left_margin="3dp"
             android:layout_height="match_parent"
             android:background="@color/white"></TextView>
 
