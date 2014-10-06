@@ -21,23 +21,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical"></TextView>
+            android:background="@color/white"></Button>
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:padding="3dip"
-            android:gravity="right"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
     </TableRow>
 
@@ -45,20 +42,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
     </TableRow>
 
@@ -66,21 +63,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
-        <TextView
+        <Button
             android:layout_width="0dp"
-            android:text="Big X"
             android:layout_height="match_parent"
-            android:background="@color/white"></TextView>
+            android:background="@color/white"></Button>
 
     </TableRow>
 

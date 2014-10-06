@@ -51,6 +51,36 @@ public class TTTActivity extends Activity {
         }
     }
 
+
+    /**
+     * Called when you press new game.
+     * @param view the New Game Button
+     */
+    public void newGame(View view) {
+        xTurn = false;
+        gameBoard = new char[3][3];
+        resetButtons();
+    }
+
+    /**
+     * Reset each button in the grid to be blank and enabled.
+     */
+    private void resetButtons() {
+        TableLayout T = (TableLayout) findViewById(R.id.tableLayout);
+        for (int y = 0; y < T.getChildCount(); y++) {
+            if (T.getChildAt(y) instanceof TableRow) {
+                TableRow R = (TableRow) T.getChildAt(y);
+                for (int x = 0; x < R.getChildCount(); x++) {
+                    if(R.getChildAt(x) instanceof Button) {
+                        Button B = (Button) R.getChildAt(x);
+                        B.setText("");
+                        B.setEnabled(true);
+                    }
+                }
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
