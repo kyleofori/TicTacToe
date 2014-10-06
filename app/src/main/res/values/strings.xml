@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">TicTacToe</string>
+    <string name="new_game">New Game</string>
     <string name="game_in_progress">There\'s a hot game of tic tac toe in progress.</string>
     <string name="action_settings">Settings</string>
 
