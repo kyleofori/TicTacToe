@@ -16,11 +16,12 @@ public class TTTActivity extends Activity {
     private boolean xTurn = false;
     private char[][] gameBoard = new char[3][3];
     private Button mNewGameButton;
+    private TextView mDisplayText;
 
 
     private void setupOnClickListeners() {
         TableLayout T = (TableLayout) findViewById(R.id.tableLayout);
-        for(int y = 0; y < T.getChildCount(); y ++) {
+        for(int y = 0; y < T.getChildCount(); y++) {
             if(T.getChildAt(y) instanceof TableRow) {
                 TableRow R = (TableRow) T.getChildAt(y);
                 for(int x = 0; x < R.getChildCount(); x ++) {
@@ -53,22 +54,14 @@ public class TTTActivity extends Activity {
 
                 // check if anyone has won
                 if (checkWin()) {
-                    disableButtons();
+                    disableButtons(); //this used to say B.setEnabled(false);
                 }
             }
         }
     }
 
 
-    /**
-     * Called when you press new game.
-     * @param view the New Game Button
-     */
-    public void newGame(View view) {
-        xTurn = false;
-        gameBoard = new char[3][3];
-        resetButtons();
-    }
+
 
     /**
      * Reset each button in the grid to be blank and enabled.
@@ -83,6 +76,24 @@ public class TTTActivity extends Activity {
                         Button B = (Button) R.getChildAt(x);
                         B.setText("");
                         B.setEnabled(true);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Disable all buttons in the grid.
+     */
+    private void disableButtons() {
+        TableLayout T = (TableLayout) findViewById(R.id.tableLayout);
+        for (int y = 0; y < T.getChildCount(); y++) {
+            if (T.getChildAt(y) instanceof TableRow) {
+                TableRow R = (TableRow) T.getChildAt(y);
+                for (int x = 0; x < R.getChildCount(); x++) {
+                    if(R.getChildAt(x) instanceof Button) {
+                        Button B = (Button) R.getChildAt(x);
+                        B.setEnabled(false);
                     }
                 }
             }
@@ -173,8 +184,7 @@ public class TTTActivity extends Activity {
             return false; // nobody won
         } else {
             // display winner
-            TextView T = (TextView) findViewById(R.id.titleText);
-            T.setText(winner + " wins");
+            mDisplayText.setText(winner + " wins");
             return true;
         }
     }
@@ -187,13 +197,25 @@ public class TTTActivity extends Activity {
 
         resetButtons();
 
+        mDisplayText = (TextView) findViewById(R.id.titleText);
+
         mNewGameButton = (Button)findViewById(R.id.new_game);
         mNewGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
         public void onClick(View view) {
-                //Does something soon...
+                newGame(view);
             }
         });
+    }
+
+    /**
+     * Called when you press new game.
+     * @param view the New Game Button
+     */
+    public void newGame(View view) {
+        xTurn = false;
+        gameBoard = new char[3][3];
+        resetButtons();
     }
 
 
