@@ -55,6 +55,7 @@ public class TTTActivity extends Activity {
                 // check if anyone has won
                 if (checkWin()) {
                     disableButtons(); //this used to say B.setEnabled(false);
+
                 }
             }
         }
@@ -216,6 +217,7 @@ public class TTTActivity extends Activity {
         xTurn = false;
         gameBoard = new char[3][3];
         resetButtons();
+        mDisplayText.setText("");
     }
 
 
