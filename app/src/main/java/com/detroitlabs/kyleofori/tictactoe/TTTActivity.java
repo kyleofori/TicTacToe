@@ -2,7 +2,6 @@ package com.detroitlabs.kyleofori.tictactoe;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +12,8 @@ import android.widget.TextView;
 //heavily based on http://lyndonarmitage.com/making-tic-tac-toe-in-android/
 
 public class TTTActivity extends Activity {
-    private boolean xTurn = false;
-    private char[][] gameBoard = new char[3][3];
+    private boolean mXTurn = false;
+    private char[][] mGameBoard = new char[3][3];
     private Button mNewGameButton;
     private TextView mDisplayText;
 
@@ -47,10 +46,10 @@ public class TTTActivity extends Activity {
         public void onClick(View view) {
             if (view instanceof Button) {
                 Button B = (Button) view;
-                gameBoard[x][y] = xTurn ? 'X' : 'O';
-                B.setText(xTurn ? "X" : "O");
+                mGameBoard[x][y] = mXTurn ? 'X' : 'O';
+                B.setText(mXTurn ? "X" : "O");
                 B.setEnabled(false);
-                xTurn = !xTurn;
+                mXTurn = !mXTurn;
 
                 // check if anyone has won
                 if (checkWin()) {
@@ -175,9 +174,9 @@ public class TTTActivity extends Activity {
     private boolean checkWin() {
 
         char winner = '\0';
-        if (checkWinner(gameBoard, 3, 'X')) {
+        if (checkWinner(mGameBoard, 3, 'X')) {
             winner = 'X';
-        } else if (checkWinner(gameBoard, 3, 'O')) {
+        } else if (checkWinner(mGameBoard, 3, 'O')) {
             winner = 'O';
         }
 
@@ -185,7 +184,7 @@ public class TTTActivity extends Activity {
             return false; // nobody won
         } else {
             // display winner
-            mDisplayText.setText(winner + " wins");
+            mDisplayText.setText(winner + getString(R.string.wins));
             return true;
         }
     }
@@ -214,8 +213,8 @@ public class TTTActivity extends Activity {
      * @param view the New Game Button
      */
     public void newGame(View view) {
-        xTurn = false;
-        gameBoard = new char[3][3];
+        mXTurn = false;
+        mGameBoard = new char[3][3];
         resetButtons();
         mDisplayText.setText("");
     }
