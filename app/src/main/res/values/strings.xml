@@ -8,5 +8,7 @@
     <string name="titleText">Tic Tac Toe - by Kyle D. Ofori</string>
     <string name="versus_game_in_progress">You are playing Tic Tac Toe AGAINST THE COMPUTER.</string>
     <string name="welcome_to_tic_tac_toe">Welcome to Tic Tac Toe!</string>
+    <string name="regular_mode">Regular Mode</string>
+    <string name="play_against_computer">Play Against Computer</string>
 
 </resources>
