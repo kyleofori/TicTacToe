@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">TicTacToe</string>
+    <string name="app_name">Tic Tac Toe</string>
     <string name="new_game">New Game</string>
     <string name="game_in_progress">There\'s a hot game of tic tac toe in progress.</string>
     <string name="action_settings">Settings</string>
-    <string name="titleText">TicTacToe - by Kyle D. Ofori</string>
+    <string name="titleText">Tic Tac Toe - by Kyle D. Ofori</string>
+    <string name="versus_game_in_progress">You are playing Tic Tac Toe AGAINST THE COMPUTER.</string>
+    <string name="welcome_to_tic_tac_toe">Welcome to Tic Tac Toe!</string>
 
 </resources>
