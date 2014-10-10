@@ -10,6 +10,6 @@
     <string name="welcome_to_tic_tac_toe">Welcome to Tic Tac Toe!</string>
     <string name="regular_mode">Regular Mode</string>
     <string name="play_against_computer">Play Against Computer</string>
-    <string name="wins"> wins</string>
+    <string name="wins">&#160;WINS!</string>
 
 </resources>
